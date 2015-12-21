@@ -1,5 +1,5 @@
 /** 
- * Recursive check if adjacent numbers are sorted
+ * isSortedSimple: Recursive check if adjacent numbers are sorted
  */
 function isSortedSimple(a) {
     function go(i) {
@@ -17,7 +17,7 @@ console.log(isSortedSimple([1, 3, 0])); // false
 
 
 /**
- * isSorted. Takes a lessThan comparison func.
+ * isSorted: Similar to isSortedSimple, but takes a lessThan comparison func.
  */
 function isSorted(a, lessThan) {
     function go(i) {
