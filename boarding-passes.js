@@ -6,11 +6,12 @@
  * - You take a one-way indirect flight trip, not stopping twice at the same airport. 
  * - You have 1 boarding pass for each leg of your trip, each containing source and destination airports.
  * 
- * @example: The result should be:  {first: "YVR", last: "HKG"} for passes = [['JFK', 'ZRH'], ['BOM', 'HKG'], ['YVR', 'JFK'], ['ZRH', 'BOM']]
+ * @example: The result should be: {first: "YVR", last: "HKG"} 
+ * for passes = [['JFK', 'ZRH'], ['BOM', 'HKG'], ['YVR', 'JFK'], ['ZRH', 'BOM']]
  */
 function findFirstAndLast(passes) {
-    var srcs = passes.map(function(x) { return x[0]});
-    var dsts = passes.map(function(x) { return x[1]});
+    var srcs = _.map(passes, _.first);
+    var dsts = _.map(passes, _.last);
     return { first: _.difference(srcs, dsts)[0], 
              last: _.difference(dsts, srcs)[0] };
 }
